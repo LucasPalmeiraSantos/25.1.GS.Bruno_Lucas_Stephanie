@@ -1,7 +1,12 @@
-#Bruno Alves de Souza 566535
-#Lucas Palmeira dos Santos 566204
-#Stephanie Kolln Sanches 564139
+# Bruno Alves de Souza 566535
+# Lucas Palmeira dos Santos 566204
+# Stephanie Kolln Sanches 564139
 
+print('REGISTRO DE DESASTRES \n')
+
+# Listas para armazenar os dados
+lista_desastres = []
+lista_afetados = []
 
 qt_desastres = int(input('Insira a quantidade de Desastres: '))
 
@@ -24,10 +29,16 @@ for i in range(0, qt_desastres):
         print()
 
         soma_validacao = nr_criancas + nr_adultos + nr_idosos + nr_mobilidade_reduzida + nr_feridos
-        
+
         if qt_pessoas_afetadas != soma_validacao:
             print("ERRO: A quantidade total informada diverge da soma dos afetados por grupo \n")
             print("Insira novamente os Dados: \n")
         else:
+            # Armazena os dados nas listas
+            lista_desastres.append([tipo_desastre, pais, cidade, bairro, rua, qt_pessoas_afetadas])
+            lista_afetados.append([nr_criancas, nr_adultos, nr_idosos, nr_mobilidade_reduzida, nr_feridos])
+            print(lista_desastres)
+            print(lista_afetados, "\n")
+
             break
 print()
